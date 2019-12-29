@@ -35,7 +35,7 @@ COMMENT ON COLUMN acs2018_5yr.geoheader.sldu IS 'State Legislative District Uppe
 COMMENT ON COLUMN acs2018_5yr.geoheader.sldl IS 'State Legislative District Lower';
 COMMENT ON COLUMN acs2018_5yr.geoheader.blank2 IS 'Reserved for future use';
 COMMENT ON COLUMN acs2018_5yr.geoheader.blank3 IS 'Reserved for future use';
-COMMENT ON COLUMN acs2018_5yr.geoheader.blank4 IS 'Reserved for future use';
+COMMENT ON COLUMN acs2018_5yr.geoheader.zcta5 IS '5-digit ZIP Code Tabulation Area';
 COMMENT ON COLUMN acs2018_5yr.geoheader.submcd IS 'Subminor Civil Division (FIPS)';
 COMMENT ON COLUMN acs2018_5yr.geoheader.sdelm IS 'State-School District (Elementary)';
 COMMENT ON COLUMN acs2018_5yr.geoheader.sdsec IS 'State-School District (Secondary)';

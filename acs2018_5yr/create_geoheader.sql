@@ -37,7 +37,7 @@ CREATE TABLE acs2018_5yr.geoheader (
 	sldl varchar(3),
 	blank2 varchar(6),
 	blank3 varchar(3),
-	blank4 varchar(5),
+	zcta5 varchar(5),
 	submcd varchar(5),
 	sdelm varchar(5),
 	sdsec varchar(5),
