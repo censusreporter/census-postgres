@@ -49,7 +49,7 @@ CREATE TABLE acs2018_5yr.geoheader (
 	puma5 varchar(5),
 	blank7 varchar(5),
 	geoid varchar(40),
-	name varchar(200),
+	name varchar(1000),
 	bttr varchar(6),
 	btbg varchar(1),
 	blank8 varchar(50),
