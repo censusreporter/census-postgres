@@ -34,7 +34,7 @@ def run(data_root, working_dir, release, config):
     line_no_col_name = config['line_number_column_name']
     table_id_col_name = config.get('table_id_column_name', 'Table ID')
 
-    with open(os.path.join(working_dir, "insert_info_tables.sql"), 'w') as sql_file:
+    with open(os.path.join(working_dir, "insert_into_tables.sql"), 'w') as sql_file:
         with codecs.open(os.path.join(data_root, "Sequence_Number_and_Table_Number_Lookup.txt"), 'r', 'iso-8859-1') as sqn_lookup_file:
             sqn_lookup_reader = csv.DictReader(sqn_lookup_file)
 
