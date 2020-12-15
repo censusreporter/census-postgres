@@ -186,7 +186,7 @@ config = {
 }
 
 if which_acs not in config:
-    print "Config for release '%s' is not specified." % which_acs
+    print("Config for release '%s' is not specified." % which_acs)
     sys.exit(1)
 
 acs_root = "%s/%s" % (data_root, which_acs)

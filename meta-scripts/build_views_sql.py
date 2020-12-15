@@ -1,6 +1,8 @@
 #!/bin/python
 
+import codecs
 import csv
+import os
 from itertools import groupby
 
 
@@ -39,43 +41,45 @@ def run(data_root, working_dir, release, config):
     line_no_col_name = config['line_number_column_name']
     table_id_col_name = config.get('table_id_column_name', 'Table ID')
 
-    sql_file = open("%s/view_stored_by_tables.sql" % (working_dir,), 'w')
+    with open(os.path.join(working_dir, "view_stored_by_tables.sql"), "w") as sql_file:
+        with codecs.open(os.path.join(data_root, "Sequence_Number_and_Table_Number_Lookup.txt"), 'r', 'iso-8859-1') as sqn_lookup_file:
+            sqn_lookup_reader = csv.DictReader(sqn_lookup_file)
 
-    sqn_lookup_file = csv.DictReader(open("%s/Sequence_Number_and_Table_Number_Lookup.txt" % data_root, 'rU'))
-    cell_names = []
-    sequences = set()
-    tables_written = {}
-    prev_line_number = 0
-    for table_id, rows in groupby(sqn_lookup_file, key=lambda row: row[table_id_col_name]):
+            cell_names = []
+            sequences = set()
+            tables_written = {}
+            prev_line_number = 0
 
-        if table_id in tables_written:
-            print "Skipping table %s in this sqn because it was already written from sqn %s." % (table_id, tables_written[table_id])
-            continue
+            for table_id, rows in groupby(sqn_lookup_reader, key=lambda row: row[table_id_col_name]):
 
-        for row in rows:
-            sqn = int(row[sqn_col_name])
-            line_number = row[line_no_col_name]
+                if table_id in tables_written:
+                    print("Skipping table %s in this sqn because it was already written from sqn %s." % (table_id, tables_written[table_id]))
+                    continue
 
-            if not line_number or line_number.endswith('.5') or line_number.endswith('.7') or line_number == '.' or line_number == ' ':
-                # Skip over entries that don't have line numbers because they won't have data in the sequences
-                # Also skip over lines ending in .5 because they're labels
-                continue
+                for row in rows:
+                    sqn = int(row[sqn_col_name])
+                    line_number = row[line_no_col_name]
 
-            line_number = int(line_number)
+                    if not line_number or line_number.endswith('.5') or line_number.endswith('.7') or line_number == '.' or line_number == ' ':
+                        # Skip over entries that don't have line numbers because they won't have data in the sequences
+                        # Also skip over lines ending in .5 because they're labels
+                        continue
 
-            if (line_number - prev_line_number) != 1 and (line_number != 1):
-                # In 2009 it looks like they screwed up the .5 label thing
-                #   and the only way to detect a label is to ensure the line
-                #   number increments by one
-                # We also want to let the line number reset back to 1 mid-sequence
-                continue
+                    line_number = int(line_number)
 
-            sequences.add(sqn)
-            cell_names.append("%s%03d" % (table_id, line_number))
-            prev_line_number = line_number
+                    if (line_number - prev_line_number) != 1 and (line_number != 1):
+                        # In 2009 it looks like they screwed up the .5 label thing
+                        #   and the only way to detect a label is to ensure the line
+                        #   number increments by one
+                        # We also want to let the line number reset back to 1 mid-sequence
+                        continue
 
-        tables_written[table_id] = sqn
+                    sequences.add(sqn)
+                    cell_names.append("%s%03d" % (table_id, line_number))
+                    prev_line_number = line_number
 
-        write_one_seq_view(sql_file, table_id, sorted(sequences), cell_names, release)
-        sequences = set()
-        cell_names = []
+                tables_written[table_id] = sqn
+
+                write_one_seq_view(sql_file, table_id, sorted(sequences), cell_names, release)
+                sequences = set()
+                cell_names = []
