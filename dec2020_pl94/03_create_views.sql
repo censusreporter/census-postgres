@@ -76,6 +76,8 @@ CREATE OR REPLACE VIEW P1 AS
     FROM tmp_geoheader g,
     tmp_seq0001 d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 
@@ -158,6 +160,8 @@ CREATE OR REPLACE VIEW P1 AS
     FROM tmp_geoheader g,
     tmp_seq0001 d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 
@@ -238,6 +242,8 @@ CREATE OR REPLACE VIEW P1 AS
     FROM tmp_geoheader g,
     tmp_seq0002 d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 
@@ -320,6 +326,8 @@ CREATE OR REPLACE VIEW P1 AS
     FROM tmp_geoheader g,
     tmp_seq0002 d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 
@@ -332,6 +340,8 @@ CREATE OR REPLACE VIEW P1 AS
     FROM tmp_geoheader g,
     tmp_seq0002 d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 
@@ -351,6 +361,8 @@ CREATE OR REPLACE VIEW P1 AS
     FROM tmp_geoheader g,
     tmp_seq0003 d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 

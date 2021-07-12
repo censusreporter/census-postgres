@@ -30,9 +30,14 @@ SAS_FILES = [
 CREATE_TABLE_SQL_FILENAME = "01_create_import_tables.sql"
 CREATE_VIEW_SQL_FILENAME = "03_create_views.sql"
 
+# pattern to parse out useful info from the field def section of the SAS script
 SAS_COLUMN_PAT = re.compile('^(\S+)\s+\$(\d+)\s+\/\*(.+)\*\/.*$')
-
+# pattern to distinguish data columns from linkage columns
+DATA_COLUMN_PAT = re.compile(r'^(P|H)(\d{3})\d+$')
 view_prep = defaultdict(list)
+
+# we'll also create python structures which could be used for CSV headers
+py_output_file = open("headers.py","w")
 
 with open(CREATE_TABLE_SQL_FILENAME,'w') as output_file:
     with zipfile.ZipFile(LOCAL_SAS_ZIPFILE) as zf:
@@ -40,12 +45,16 @@ with open(CREATE_TABLE_SQL_FILENAME,'w') as output_file:
             output_file.write(f"-- {fn}\n")
             if 'geohd' in fn:
                 table_name = "tmp_geoheader"
+                py_struct_prefix = 'GEOHEADER'
             else:
                 table_number = re.search('part(\d+)_',fn).group(1)
                 table_name = f"tmp_seq{table_number.zfill(4)}"
+                py_struct_prefix = f'SEQ{table_number.zfill(2)}'
 
             cols = []
             in_the_meat = False
+
+            # loop through and build a data structure for all of the columns
             with io.TextIOWrapper(zf.open(fn), encoding="utf-8") as sas_file:
                 for l in sas_file:
                     l = l[:-1] # trim newline
@@ -59,16 +68,20 @@ with open(CREATE_TABLE_SQL_FILENAME,'w') as output_file:
                             cols.append((col,length,comment))
                             # walrus operator (:=) req python 3.8+
                             # build the list of columns for each view based on logical tables
-                            if match := re.match(r'^(P|H)(\d{3})\d+$',col):
+                            if match := DATA_COLUMN_PAT.match(col):
                                 ltr,nbr = match.groups()
                                 view_name = f"{ltr.upper()}{nbr.lstrip('0')}"
                                 view_prep[view_name].append((table_name,col))
                         else:
                             print(f"Line in {fn} doesn't match expected pattern {l}")
+            # write the SQL DDL
             output_file.write(f"DROP TABLE IF EXISTS {table_name} CASCADE;\n")
             output_file.write(f"CREATE TABLE {table_name} (\n")
             for i,(col, length, comment) in enumerate(cols):
-                output_file.write(f"\t{col} varchar({length})")
+                if DATA_COLUMN_PAT.match(col):
+                    output_file.write(f"\t{col} INTEGER")
+                else:
+                    output_file.write(f"\t{col} VARCHAR({length})")
                 if i+1 < len(cols):
                     output_file.write(",\n")
                 else:
@@ -79,6 +92,27 @@ with open(CREATE_TABLE_SQL_FILENAME,'w') as output_file:
                 escaped_comment = comment.replace("'","''")
                 output_file.write(f"COMMENT ON COLUMN {table_name}.{col} IS '{escaped_comment}';\n")
             output_file.write("\n\n")
+
+            # write arrays of column names
+            py_output_file.write(f"{py_struct_prefix}_COLS = [  \n")
+            for col, length, comment in cols:
+                py_output_file.write(f"    '{col}', # {comment} \n")
+            py_output_file.write("]\n\n")
+
+            # write dtypes
+            py_output_file.write(f"{py_struct_prefix}_DTYPES = {{  \n")
+            for col, length, comment in cols:
+                if DATA_COLUMN_PAT.match(col):
+                    dtype = 'int'
+                else:
+                    dtype = 'o'
+
+                py_output_file.write(f"    '{col}': '{dtype}', # {comment} \n")
+            py_output_file.write("}\n\n")
+
+
+
+                
 
 print(f"wrote {CREATE_TABLE_SQL_FILENAME}")
 
@@ -96,6 +130,8 @@ with open(CREATE_VIEW_SQL_FILENAME,"w") as output_file:
     FROM tmp_geoheader g,
     {source_table} d
     WHERE g.fileid   = d.fileid
+    AND g.stusab = d.stusab
+    AND g.chariter = d.chariter
     AND g.logrecno = d.logrecno
     AND g.sumlev = '750';
 
