@@ -103,3 +103,5 @@ CREATE TABLE dec2010_pl94.geoheader (
 	RESERVED varchar(18)
 )
 WITH (autovacuum_enabled = FALSE, toast.autovacuum_enabled = FALSE);
+
+CREATE INDEX geoheader_join_idx on dec2010_pl94.geoheader (LOGRECNO, STUSAB);

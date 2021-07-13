@@ -151,6 +151,8 @@ CREATE TABLE dec2010_pl94.seq0001 (
 )
 WITH (autovacuum_enabled = FALSE, toast.autovacuum_enabled = FALSE);
 
+CREATE INDEX seq0001_join_idx on dec2010_pl94.seq0001 (LOGRECNO, STUSAB);
+
 
 CREATE TABLE dec2010_pl94.seq0002 (
 	FILEID varchar(6),
@@ -307,6 +309,9 @@ CREATE TABLE dec2010_pl94.seq0002 (
 	H0010003 integer
 )
 WITH (autovacuum_enabled = FALSE, toast.autovacuum_enabled = FALSE);
+
+CREATE INDEX seq0002_join_idx on dec2010_pl94.seq0002 (LOGRECNO, STUSAB);
+
 
 COMMENT ON COLUMN dec2010_pl94.seq0001.FILEID IS 'File Identification';
 COMMENT ON COLUMN dec2010_pl94.seq0001.STUSAB IS 'State/US-Abbreviation (USPS)';
