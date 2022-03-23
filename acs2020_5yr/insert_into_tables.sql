@@ -237,6 +237,7 @@ NULLIF(NULLIF(s.B01001F030, ''), '.')::double precision,
 NULLIF(NULLIF(s.B01001F031, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0001 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0001 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0001_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -477,6 +478,7 @@ NULLIF(NULLIF(s.B01001F030_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B01001F031_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0001_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0001_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0002
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -606,6 +608,7 @@ NULLIF(NULLIF(s.B01002I003, ''), '.')::double precision,
 NULLIF(NULLIF(s.B01003001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0002 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0002 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0002_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -735,6 +738,7 @@ NULLIF(NULLIF(s.B01002I003_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B01003001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0002_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0002_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0003
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -956,6 +960,7 @@ NULLIF(NULLIF(s.C02003018, ''), '.')::double precision,
 NULLIF(NULLIF(s.C02003019, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0003 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0003 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0003_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1177,6 +1182,7 @@ NULLIF(NULLIF(s.C02003018_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C02003019_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0003_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0003_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0004
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1237,6 +1243,7 @@ NULLIF(NULLIF(s.B03003002, ''), '.')::double precision,
 NULLIF(NULLIF(s.B03003003, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0004 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0004 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0004_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1297,6 +1304,7 @@ NULLIF(NULLIF(s.B03003002_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B03003003_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0004_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0004_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0005
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1518,6 +1526,7 @@ NULLIF(NULLIF(s.B04005107, ''), '.')::double precision,
 NULLIF(NULLIF(s.B04005108, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0005 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0005 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0005_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1739,6 +1748,7 @@ NULLIF(NULLIF(s.B04005107_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B04005108_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0005_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0005_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0006
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1860,6 +1870,7 @@ NULLIF(NULLIF(s.B04007006, ''), '.')::double precision,
 NULLIF(NULLIF(s.B04007007, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0006 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0006 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0006_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -1981,6 +1992,7 @@ NULLIF(NULLIF(s.B04007006_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B04007007_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0006_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0006_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0007
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -2209,6 +2221,7 @@ NULLIF(NULLIF(s.B05003G022, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05003G023, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0007 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0007 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0007_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -2437,6 +2450,7 @@ NULLIF(NULLIF(s.B05003G022_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05003G023_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0007_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0007_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0008
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -2545,6 +2559,7 @@ NULLIF(NULLIF(s.B05005PR020, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05005PR021, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0008 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0008 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0008_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -2653,6 +2668,7 @@ NULLIF(NULLIF(s.B05005PR020_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05005PR021_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0008_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0008_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0009
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -2872,6 +2888,7 @@ NULLIF(NULLIF(s.B05006PR045, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05006PR046, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0009 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0009 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0009_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -3091,6 +3108,7 @@ NULLIF(NULLIF(s.B05006PR045_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05006PR046_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0009_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0009_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0010
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -3333,6 +3351,7 @@ NULLIF(NULLIF(s.B05010024, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05010025, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0010 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0010 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0010_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -3575,6 +3594,7 @@ NULLIF(NULLIF(s.B05010024_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05010025_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0010_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0010_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0011
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -3685,6 +3705,7 @@ NULLIF(NULLIF(s.B05015030, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05015031, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0011 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0011 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0011_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -3795,6 +3816,7 @@ NULLIF(NULLIF(s.B05015030_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B05015031_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0011_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0011_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0012
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -4045,6 +4067,7 @@ NULLIF(NULLIF(s.B06004I004, ''), '.')::double precision,
 NULLIF(NULLIF(s.B06004I005, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0012 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0012 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0012_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -4295,6 +4318,7 @@ NULLIF(NULLIF(s.B06004I004_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B06004I005_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0012_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0012_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0013
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -4505,6 +4529,7 @@ NULLIF(NULLIF(s.B06009PR029, ''), '.')::double precision,
 NULLIF(NULLIF(s.B06009PR030, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0013 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0013 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0013_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -4715,6 +4740,7 @@ NULLIF(NULLIF(s.B06009PR029_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B06009PR030_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0013_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0013_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0014
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -4880,6 +4906,7 @@ NULLIF(NULLIF(s.B06012PR019, ''), '.')::double precision,
 NULLIF(NULLIF(s.B06012PR020, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0014 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0014 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0014_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -5045,6 +5072,7 @@ NULLIF(NULLIF(s.B06012PR019_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B06012PR020_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0014_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0014_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0015
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -5290,6 +5318,7 @@ NULLIF(NULLIF(s.B07003PR017, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07003PR018, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0015 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0015 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0015_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -5535,6 +5564,7 @@ NULLIF(NULLIF(s.B07003PR017_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07003PR018_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0015_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0015_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0016
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -5780,6 +5810,7 @@ NULLIF(NULLIF(s.B07008PR035, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07008PR036, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0016 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0016 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0016_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -6025,6 +6056,7 @@ NULLIF(NULLIF(s.B07008PR035_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07008PR036_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0016_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0016_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0017
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -6270,6 +6302,7 @@ NULLIF(NULLIF(s.B07012023, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07012024, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0017 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0017 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0017_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -6515,6 +6548,7 @@ NULLIF(NULLIF(s.B07012023_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07012024_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0017_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0017_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0018
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -6756,6 +6790,7 @@ NULLIF(NULLIF(s.B07204PR016, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07204PR017, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0018 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0018 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0018_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -6997,6 +7032,7 @@ NULLIF(NULLIF(s.B07204PR016_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07204PR017_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0018_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0018_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0019
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -7247,6 +7283,7 @@ NULLIF(NULLIF(s.B07404I004, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07404I005, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0019 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0019 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0019_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -7497,6 +7534,7 @@ NULLIF(NULLIF(s.B07404I004_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07404I005_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0019_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0019_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0020
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -7717,6 +7755,7 @@ NULLIF(NULLIF(s.B07409PR029, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07409PR030, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0020 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0020 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0020_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -7937,6 +7976,7 @@ NULLIF(NULLIF(s.B07409PR029_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07409PR030_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0020_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0020_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0021
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -8132,6 +8172,7 @@ NULLIF(NULLIF(s.B07413PR014, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07413PR015, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0021 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0021 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0021_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -8327,6 +8368,7 @@ NULLIF(NULLIF(s.B07413PR014_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B07413PR015_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0021_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0021_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0022
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -8562,6 +8604,7 @@ NULLIF(NULLIF(s.B08016022, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08016023, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0022 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0022 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0022_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -8797,6 +8840,7 @@ NULLIF(NULLIF(s.B08016022_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08016023_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0022_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0022_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0023
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -8994,6 +9038,7 @@ NULLIF(NULLIF(s.B08111034, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08111035, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0023 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0023 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0023_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -9191,6 +9236,7 @@ NULLIF(NULLIF(s.B08111034_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08111035_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0023_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0023_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0024
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -9399,6 +9445,7 @@ NULLIF(NULLIF(s.B08124048, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08124049, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0024 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0024 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0024_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -9607,6 +9654,7 @@ NULLIF(NULLIF(s.B08124048_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08124049_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0024_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0024_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0025
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -9823,6 +9871,7 @@ NULLIF(NULLIF(s.B08131004, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08131005, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0025 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0025 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0025_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -10039,6 +10088,7 @@ NULLIF(NULLIF(s.B08131004_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08131005_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0025_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0025_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0026
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -10279,6 +10329,7 @@ NULLIF(NULLIF(s.B08135009, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08135010, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0026 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0026 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0026_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -10519,6 +10570,7 @@ NULLIF(NULLIF(s.B08135009_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08135010_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0026_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0026_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0027
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -10723,6 +10775,7 @@ NULLIF(NULLIF(s.B08303012, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08303013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0027 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0027 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0027_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -10927,6 +10980,7 @@ NULLIF(NULLIF(s.B08303012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08303013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0027_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0027_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0028
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -11148,6 +11202,7 @@ NULLIF(NULLIF(s.B08505I006, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08505I007, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0028 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0028 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0028_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -11369,6 +11424,7 @@ NULLIF(NULLIF(s.B08505I006_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08505I007_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0028_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0028_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0029
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -11612,6 +11668,7 @@ NULLIF(NULLIF(s.B08524048, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08524049, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0029 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0029 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0029_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -11855,6 +11912,7 @@ NULLIF(NULLIF(s.B08524048_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08524049_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0029_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0029_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0030
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -12035,6 +12093,7 @@ NULLIF(NULLIF(s.B08528069, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08528070, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0030 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0030 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0030_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -12215,6 +12274,7 @@ NULLIF(NULLIF(s.B08528069_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08528070_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0030_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0030_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0031
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -12463,6 +12523,7 @@ NULLIF(NULLIF(s.B08537020, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08537021, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0031 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0031 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0031_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -12711,6 +12772,7 @@ NULLIF(NULLIF(s.B08537020_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08537021_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0031_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0031_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0032
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -12801,6 +12863,7 @@ NULLIF(NULLIF(s.B08603013, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08604001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0032 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0032 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0032_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -12891,6 +12954,7 @@ NULLIF(NULLIF(s.B08603013_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B08604001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0032_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0032_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0033
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -13027,6 +13091,7 @@ NULLIF(NULLIF(s.B09021027, ''), '.')::double precision,
 NULLIF(NULLIF(s.B09021028, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0033 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0033 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0033_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -13163,6 +13228,7 @@ NULLIF(NULLIF(s.B09021027_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B09021028_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0033_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0033_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0034
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -13354,6 +13420,7 @@ NULLIF(NULLIF(s.B10063006, ''), '.')::double precision,
 NULLIF(NULLIF(s.B10063007, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0034 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0034 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0034_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -13545,6 +13612,7 @@ NULLIF(NULLIF(s.B10063006_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B10063007_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0034_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0034_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0035
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -13780,6 +13848,7 @@ NULLIF(NULLIF(s.B11003019, ''), '.')::double precision,
 NULLIF(NULLIF(s.B11003020, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0035 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0035 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0035_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -14015,6 +14084,7 @@ NULLIF(NULLIF(s.B11003019_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B11003020_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0035_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0035_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0036
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -14195,6 +14265,7 @@ NULLIF(NULLIF(s.B11017002, ''), '.')::double precision,
 NULLIF(NULLIF(s.B11017003, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0036 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0036 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0036_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -14375,6 +14446,7 @@ NULLIF(NULLIF(s.B11017002_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B11017003_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0036_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0036_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0037
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -14625,6 +14697,7 @@ NULLIF(NULLIF(s.B12002C012, ''), '.')::double precision,
 NULLIF(NULLIF(s.B12002C013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0037 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0037 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0037_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -14875,6 +14948,7 @@ NULLIF(NULLIF(s.B12002C012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B12002C013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0037_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0037_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0038
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -15093,6 +15167,7 @@ NULLIF(NULLIF(s.B12505012, ''), '.')::double precision,
 NULLIF(NULLIF(s.B12505013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0038 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0038 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0038_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -15311,6 +15386,7 @@ NULLIF(NULLIF(s.B12505012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B12505013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0038_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0038_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0039
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -15515,6 +15591,7 @@ NULLIF(NULLIF(s.B13016016, ''), '.')::double precision,
 NULLIF(NULLIF(s.B13016017, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0039 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0039 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0039_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -15719,6 +15796,7 @@ NULLIF(NULLIF(s.B13016016_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B13016017_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0039_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0039_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0040
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -15961,6 +16039,7 @@ NULLIF(NULLIF(s.B14007A018, ''), '.')::double precision,
 NULLIF(NULLIF(s.B14007A019, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0040 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0040 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0040_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -16203,6 +16282,7 @@ NULLIF(NULLIF(s.B14007A018_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B14007A019_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0040_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0040_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0041
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -16360,6 +16440,7 @@ NULLIF(NULLIF(s.B14007I018, ''), '.')::double precision,
 NULLIF(NULLIF(s.B14007I019, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0041 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0041 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0041_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -16517,6 +16598,7 @@ NULLIF(NULLIF(s.B14007I018_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B14007I019_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0041_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0041_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0042
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -16764,6 +16846,7 @@ NULLIF(NULLIF(s.C15002I010, ''), '.')::double precision,
 NULLIF(NULLIF(s.C15002I011, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0042 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0042 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0042_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -17011,6 +17094,7 @@ NULLIF(NULLIF(s.C15002I010_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C15002I011_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0042_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0042_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0043
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -17131,6 +17215,7 @@ NULLIF(NULLIF(s.C15010I005, ''), '.')::double precision,
 NULLIF(NULLIF(s.C15010I006, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0043 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0043 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0043_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -17251,6 +17336,7 @@ NULLIF(NULLIF(s.C15010I005_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C15010I006_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0043_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0043_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0044
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -17448,6 +17534,7 @@ NULLIF(NULLIF(s.C16002013, ''), '.')::double precision,
 NULLIF(NULLIF(s.C16002014, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0044 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0044 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0044_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -17645,6 +17732,7 @@ NULLIF(NULLIF(s.C16002013_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C16002014_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0044_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0044_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0045
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -17888,6 +17976,7 @@ NULLIF(NULLIF(s.B16007018, ''), '.')::double precision,
 NULLIF(NULLIF(s.B16007019, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0045 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0045 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0045_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -18131,6 +18220,7 @@ NULLIF(NULLIF(s.B16007018_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B16007019_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0045_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0045_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0046
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -18269,6 +18359,7 @@ NULLIF(NULLIF(s.B16010052, ''), '.')::double precision,
 NULLIF(NULLIF(s.B16010053, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0046 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0046 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0046_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -18407,6 +18498,7 @@ NULLIF(NULLIF(s.B16010052_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B16010053_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0046_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0046_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0047
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -18648,6 +18740,7 @@ NULLIF(NULLIF(s.B17001C058, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17001C059, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0047 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0047 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0047_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -18889,6 +18982,7 @@ NULLIF(NULLIF(s.B17001C058_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17001C059_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0047_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0047_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0048
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -19130,6 +19224,7 @@ NULLIF(NULLIF(s.B17001G058, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17001G059, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0048 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0048 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0048_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -19371,6 +19466,7 @@ NULLIF(NULLIF(s.B17001G058_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17001G059_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0048_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0048_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0049
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -19596,6 +19692,7 @@ NULLIF(NULLIF(s.C17002007, ''), '.')::double precision,
 NULLIF(NULLIF(s.C17002008, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0049 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0049 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0049_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -19821,6 +19918,7 @@ NULLIF(NULLIF(s.C17002007_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C17002008_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0049_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0049_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0050
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -20057,6 +20155,7 @@ NULLIF(NULLIF(s.B17010C040, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17010C041, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0050 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0050 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0050_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -20293,6 +20392,7 @@ NULLIF(NULLIF(s.B17010C040_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17010C041_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0050_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0050_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0051
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -20503,6 +20603,7 @@ NULLIF(NULLIF(s.B17010H040, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17010H041, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0051 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0051 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0051_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -20713,6 +20814,7 @@ NULLIF(NULLIF(s.B17010H040_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17010H041_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0051_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0051_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0052
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -20963,6 +21065,7 @@ NULLIF(NULLIF(s.B17016046, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17016047, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0052 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0052 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0052_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -21213,6 +21316,7 @@ NULLIF(NULLIF(s.B17016046_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17016047_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0052_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0052_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0053
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -21454,6 +21558,7 @@ NULLIF(NULLIF(s.B17020F016, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17020F017, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0053 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0053 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0053_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -21695,6 +21800,7 @@ NULLIF(NULLIF(s.B17020F016_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17020F017_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0053_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0053_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0054
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -21902,6 +22008,7 @@ NULLIF(NULLIF(s.B17023034, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17023035, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0054 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0054 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0054_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -22109,6 +22216,7 @@ NULLIF(NULLIF(s.B17023034_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17023035_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0054_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0054_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0055
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -22273,6 +22381,7 @@ NULLIF(NULLIF(s.B17026012, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17026013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0055 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0055 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0055_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -22437,6 +22546,7 @@ NULLIF(NULLIF(s.B17026012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B17026013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0055_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0055_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0056
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -22682,6 +22792,7 @@ NULLIF(NULLIF(s.B18104032, ''), '.')::double precision,
 NULLIF(NULLIF(s.B18104033, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0056 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0056 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0056_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -22927,6 +23038,7 @@ NULLIF(NULLIF(s.B18104032_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B18104033_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0056_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0056_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0057
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -23138,6 +23250,7 @@ NULLIF(NULLIF(s.C18131015, ''), '.')::double precision,
 NULLIF(NULLIF(s.C18131016, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0057 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0057 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0057_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -23349,6 +23462,7 @@ NULLIF(NULLIF(s.C18131015_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C18131016_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0057_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0057_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0058
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -23552,6 +23666,7 @@ NULLIF(NULLIF(s.B19025H001, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19025I001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0058 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0058 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0058_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -23755,6 +23870,7 @@ NULLIF(NULLIF(s.B19025H001_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19025I001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0058_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0058_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0059
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -23967,6 +24083,7 @@ NULLIF(NULLIF(s.B19037B068, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19037B069, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0059 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0059 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0059_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -24179,6 +24296,7 @@ NULLIF(NULLIF(s.B19037B068_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19037B069_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0059_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0059_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0060
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -24391,6 +24509,7 @@ NULLIF(NULLIF(s.B19037E068, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19037E069, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0060 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0060 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0060_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -24603,6 +24722,7 @@ NULLIF(NULLIF(s.B19037E068_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19037E069_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0060_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0060_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0061
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -24815,6 +24935,7 @@ NULLIF(NULLIF(s.B19037H068, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19037H069, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0061 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0061 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0061_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -25027,6 +25148,7 @@ NULLIF(NULLIF(s.B19037H068_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19037H069_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0061_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0061_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0062
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -25270,6 +25392,7 @@ NULLIF(NULLIF(s.B19101E016, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19101E017, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0062 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0062 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0062_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -25513,6 +25636,7 @@ NULLIF(NULLIF(s.B19101E016_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19101E017_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0062_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0062_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0063
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -25696,6 +25820,7 @@ NULLIF(NULLIF(s.B19130028, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19130029, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0063 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0063 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0063_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -25879,6 +26004,7 @@ NULLIF(NULLIF(s.B19130028_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19130029_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0063_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0063_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0064
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -26069,6 +26195,7 @@ NULLIF(NULLIF(s.B19313H001, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19313I001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0064 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0064 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0064_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -26259,6 +26386,7 @@ NULLIF(NULLIF(s.B19313H001_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19313I001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0064_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0064_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0065
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -26366,6 +26494,7 @@ NULLIF(NULLIF(s.B19326006, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19326007, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0065 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0065 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0065_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -26473,6 +26602,7 @@ NULLIF(NULLIF(s.B19326006_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B19326007_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0065_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0065_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0066
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -26644,6 +26774,7 @@ NULLIF(NULLIF(s.B20005094, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005095, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0066 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0066 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0066_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -26815,6 +26946,7 @@ NULLIF(NULLIF(s.B20005094_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005095_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0066_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0066_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0067
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -27010,6 +27142,7 @@ NULLIF(NULLIF(s.B20005B094, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005B095, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0067 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0067 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0067_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -27205,6 +27338,7 @@ NULLIF(NULLIF(s.B20005B094_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005B095_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0067_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0067_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0068
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -27400,6 +27534,7 @@ NULLIF(NULLIF(s.B20005D094, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005D095, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0068 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0068 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0068_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -27595,6 +27730,7 @@ NULLIF(NULLIF(s.B20005D094_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005D095_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0068_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0068_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0069
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -27790,6 +27926,7 @@ NULLIF(NULLIF(s.B20005F094, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005F095, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0069 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0069 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0069_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -27985,6 +28122,7 @@ NULLIF(NULLIF(s.B20005F094_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005F095_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0069_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0069_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0070
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -28180,6 +28318,7 @@ NULLIF(NULLIF(s.B20005H094, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005H095, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0070 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0070 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0070_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -28375,6 +28514,7 @@ NULLIF(NULLIF(s.B20005H094_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20005H095_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0070_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0070_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0071
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -28546,6 +28686,7 @@ NULLIF(NULLIF(s.B20017I007, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20018001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0071 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0071 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0071_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -28717,6 +28858,7 @@ NULLIF(NULLIF(s.B20017I007_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B20018001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0071_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0071_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0072
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -28964,6 +29106,7 @@ NULLIF(NULLIF(s.C21001I014, ''), '.')::double precision,
 NULLIF(NULLIF(s.C21001I015, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0072 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0072 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0072_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -29211,6 +29354,7 @@ NULLIF(NULLIF(s.C21001I014_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C21001I015_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0072_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0072_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0073
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -29256,6 +29400,7 @@ NULLIF(NULLIF(s.C21007030, ''), '.')::double precision,
 NULLIF(NULLIF(s.C21007031, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0073 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0073 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0073_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -29301,6 +29446,7 @@ NULLIF(NULLIF(s.C21007030_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C21007031_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0073_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0073_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0074
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -29427,6 +29573,7 @@ NULLIF(NULLIF(s.B22010006, ''), '.')::double precision,
 NULLIF(NULLIF(s.B22010007, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0074 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0074 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0074_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -29553,6 +29700,7 @@ NULLIF(NULLIF(s.B22010006_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B22010007_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0074_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0074_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0075
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -29785,6 +29933,7 @@ NULLIF(NULLIF(s.C23002B026, ''), '.')::double precision,
 NULLIF(NULLIF(s.C23002B027, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0075 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0075 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0075_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -30017,6 +30166,7 @@ NULLIF(NULLIF(s.C23002B026_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C23002B027_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0075_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0075_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0076
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -30241,6 +30391,7 @@ NULLIF(NULLIF(s.C23002I026, ''), '.')::double precision,
 NULLIF(NULLIF(s.C23002I027, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0076 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0076 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0076_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -30465,6 +30616,7 @@ NULLIF(NULLIF(s.C23002I026_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C23002I027_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0076_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0076_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0077
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -30713,6 +30865,7 @@ NULLIF(NULLIF(s.B23022048, ''), '.')::double precision,
 NULLIF(NULLIF(s.B23022049, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0077 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0077 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0077_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -30961,6 +31114,7 @@ NULLIF(NULLIF(s.B23022048_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B23022049_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0077_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0077_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0078
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -31089,6 +31243,7 @@ NULLIF(NULLIF(s.B23027035, ''), '.')::double precision,
 NULLIF(NULLIF(s.B23027036, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0078 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0078 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0078_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -31217,6 +31372,7 @@ NULLIF(NULLIF(s.B23027035_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B23027036_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0078_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0078_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0079
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -31448,6 +31604,7 @@ NULLIF(NULLIF(s.C24010I012, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24010I013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0079 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0079 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0079_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -31679,6 +31836,7 @@ NULLIF(NULLIF(s.C24010I012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24010I013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0079_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0079_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0080
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -31866,6 +32024,7 @@ NULLIF(NULLIF(s.C24020072, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24020073, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0080 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0080 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0080_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -32053,6 +32212,7 @@ NULLIF(NULLIF(s.C24020072_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24020073_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0080_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0080_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0081
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -32267,6 +32427,7 @@ NULLIF(NULLIF(s.C24030054, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24030055, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0081 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0081 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0081_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -32481,6 +32642,7 @@ NULLIF(NULLIF(s.C24030054_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24030055_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0081_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0081_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0082
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -32706,6 +32868,7 @@ NULLIF(NULLIF(s.C24050083, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24050084, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0082 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0082 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0082_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -32931,6 +33094,7 @@ NULLIF(NULLIF(s.C24050083_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24050084_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0082_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0082_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0083
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -33152,6 +33316,7 @@ NULLIF(NULLIF(s.C24070083, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24070084, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0083 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0083 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0083_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -33373,6 +33538,7 @@ NULLIF(NULLIF(s.C24070083_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C24070084_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0083_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0083_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0084
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -33623,6 +33789,7 @@ NULLIF(NULLIF(s.B24114244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24114245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0084 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0084 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0084_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -33873,6 +34040,7 @@ NULLIF(NULLIF(s.B24114244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24114245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0084_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0084_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0085
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -34123,6 +34291,7 @@ NULLIF(NULLIF(s.B24114489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24114490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0085 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0085 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0085_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -34373,6 +34542,7 @@ NULLIF(NULLIF(s.B24114489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24114490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0085_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0085_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0086
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -34454,6 +34624,7 @@ NULLIF(NULLIF(s.B24114565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24114566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0086 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0086 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0086_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -34535,6 +34706,7 @@ NULLIF(NULLIF(s.B24114565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24114566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0086_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0086_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0087
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -34785,6 +34957,7 @@ NULLIF(NULLIF(s.B24115244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24115245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0087 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0087 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0087_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -35035,6 +35208,7 @@ NULLIF(NULLIF(s.B24115244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24115245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0087_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0087_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0088
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -35285,6 +35459,7 @@ NULLIF(NULLIF(s.B24115489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24115490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0088 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0088 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0088_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -35535,6 +35710,7 @@ NULLIF(NULLIF(s.B24115489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24115490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0088_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0088_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0089
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -35616,6 +35792,7 @@ NULLIF(NULLIF(s.B24115565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24115566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0089 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0089 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0089_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -35697,6 +35874,7 @@ NULLIF(NULLIF(s.B24115565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24115566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0089_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0089_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0090
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -35947,6 +36125,7 @@ NULLIF(NULLIF(s.B24116244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24116245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0090 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0090 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0090_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -36197,6 +36376,7 @@ NULLIF(NULLIF(s.B24116244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24116245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0090_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0090_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0091
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -36447,6 +36627,7 @@ NULLIF(NULLIF(s.B24116489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24116490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0091 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0091 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0091_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -36697,6 +36878,7 @@ NULLIF(NULLIF(s.B24116489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24116490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0091_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0091_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0092
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -36778,6 +36960,7 @@ NULLIF(NULLIF(s.B24116565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24116566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0092 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0092 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0092_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -36859,6 +37042,7 @@ NULLIF(NULLIF(s.B24116565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24116566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0092_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0092_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0093
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -37109,6 +37293,7 @@ NULLIF(NULLIF(s.B24121244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24121245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0093 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0093 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0093_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -37359,6 +37544,7 @@ NULLIF(NULLIF(s.B24121244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24121245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0093_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0093_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0094
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -37609,6 +37795,7 @@ NULLIF(NULLIF(s.B24121489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24121490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0094 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0094 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0094_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -37859,6 +38046,7 @@ NULLIF(NULLIF(s.B24121489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24121490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0094_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0094_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0095
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -37940,6 +38128,7 @@ NULLIF(NULLIF(s.B24121565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24121566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0095 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0095 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0095_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -38021,6 +38210,7 @@ NULLIF(NULLIF(s.B24121565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24121566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0095_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0095_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0096
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -38271,6 +38461,7 @@ NULLIF(NULLIF(s.B24122244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24122245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0096 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0096 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0096_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -38521,6 +38712,7 @@ NULLIF(NULLIF(s.B24122244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24122245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0096_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0096_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0097
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -38771,6 +38963,7 @@ NULLIF(NULLIF(s.B24122489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24122490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0097 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0097 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0097_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -39021,6 +39214,7 @@ NULLIF(NULLIF(s.B24122489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24122490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0097_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0097_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0098
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -39102,6 +39296,7 @@ NULLIF(NULLIF(s.B24122565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24122566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0098 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0098 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0098_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -39183,6 +39378,7 @@ NULLIF(NULLIF(s.B24122565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24122566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0098_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0098_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0099
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -39433,6 +39629,7 @@ NULLIF(NULLIF(s.B24123244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24123245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0099 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0099 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0099_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -39683,6 +39880,7 @@ NULLIF(NULLIF(s.B24123244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24123245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0099_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0099_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0100
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -39933,6 +40131,7 @@ NULLIF(NULLIF(s.B24123489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24123490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0100 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0100 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0100_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -40183,6 +40382,7 @@ NULLIF(NULLIF(s.B24123489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24123490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0100_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0100_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0101
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -40264,6 +40464,7 @@ NULLIF(NULLIF(s.B24123565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24123566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0101 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0101 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0101_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -40345,6 +40546,7 @@ NULLIF(NULLIF(s.B24123565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24123566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0101_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0101_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0102
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -40595,6 +40797,7 @@ NULLIF(NULLIF(s.B24124244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24124245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0102 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0102 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0102_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -40845,6 +41048,7 @@ NULLIF(NULLIF(s.B24124244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24124245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0102_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0102_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0103
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -41095,6 +41299,7 @@ NULLIF(NULLIF(s.B24124489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24124490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0103 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0103 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0103_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -41345,6 +41550,7 @@ NULLIF(NULLIF(s.B24124489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24124490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0103_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0103_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0104
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -41426,6 +41632,7 @@ NULLIF(NULLIF(s.B24124565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24124566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0104 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0104 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0104_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -41507,6 +41714,7 @@ NULLIF(NULLIF(s.B24124565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24124566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0104_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0104_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0105
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -41757,6 +41965,7 @@ NULLIF(NULLIF(s.B24125244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24125245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0105 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0105 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0105_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -42007,6 +42216,7 @@ NULLIF(NULLIF(s.B24125244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24125245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0105_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0105_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0106
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -42257,6 +42467,7 @@ NULLIF(NULLIF(s.B24125489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24125490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0106 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0106 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0106_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -42507,6 +42718,7 @@ NULLIF(NULLIF(s.B24125489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24125490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0106_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0106_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0107
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -42588,6 +42800,7 @@ NULLIF(NULLIF(s.B24125565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24125566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0107 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0107 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0107_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -42669,6 +42882,7 @@ NULLIF(NULLIF(s.B24125565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24125566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0107_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0107_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0108
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -42919,6 +43133,7 @@ NULLIF(NULLIF(s.B24126244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24126245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0108 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0108 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0108_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -43169,6 +43384,7 @@ NULLIF(NULLIF(s.B24126244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24126245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0108_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0108_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0109
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -43419,6 +43635,7 @@ NULLIF(NULLIF(s.B24126489, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24126490, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0109 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0109 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0109_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -43669,6 +43886,7 @@ NULLIF(NULLIF(s.B24126489_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24126490_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0109_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0109_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0110
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -43750,6 +43968,7 @@ NULLIF(NULLIF(s.B24126565, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24126566, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0110 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0110 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0110_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -43831,6 +44050,7 @@ NULLIF(NULLIF(s.B24126565_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24126566_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0110_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0110_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0111
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44081,6 +44301,7 @@ NULLIF(NULLIF(s.B24134244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24134245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0111 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0111 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0111_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44331,6 +44552,7 @@ NULLIF(NULLIF(s.B24134244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24134245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0111_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0111_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0112
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44354,6 +44576,7 @@ NULLIF(NULLIF(s.B24134262, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24134263, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0112 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0112 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0112_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44377,6 +44600,7 @@ NULLIF(NULLIF(s.B24134262_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24134263_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0112_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0112_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0113
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44627,6 +44851,7 @@ NULLIF(NULLIF(s.B24135244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24135245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0113 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0113 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0113_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44877,6 +45102,7 @@ NULLIF(NULLIF(s.B24135244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24135245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0113_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0113_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0114
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44900,6 +45126,7 @@ NULLIF(NULLIF(s.B24135262, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24135263, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0114 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0114 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0114_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -44923,6 +45150,7 @@ NULLIF(NULLIF(s.B24135262_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24135263_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0114_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0114_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0115
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -45173,6 +45401,7 @@ NULLIF(NULLIF(s.B24136244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24136245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0115 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0115 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0115_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -45423,6 +45652,7 @@ NULLIF(NULLIF(s.B24136244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24136245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0115_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0115_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0116
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -45446,6 +45676,7 @@ NULLIF(NULLIF(s.B24136262, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24136263, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0116 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0116 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0116_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -45469,6 +45700,7 @@ NULLIF(NULLIF(s.B24136262_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B24136263_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0116_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0116_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0117
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -45717,6 +45949,7 @@ NULLIF(NULLIF(s.B25015026, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25015027, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0117 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0117 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0117_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -45965,6 +46198,7 @@ NULLIF(NULLIF(s.B25015026_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25015027_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0117_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0117_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0118
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -46213,6 +46447,7 @@ NULLIF(NULLIF(s.B25033012, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25033013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0118 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0118 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0118_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -46461,6 +46696,7 @@ NULLIF(NULLIF(s.B25033012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25033013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0118_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0118_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0119
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -46706,6 +46942,7 @@ NULLIF(NULLIF(s.B25059001, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25060001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0119 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0119 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0119_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -46951,6 +47188,7 @@ NULLIF(NULLIF(s.B25059001_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25060001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0119_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0119_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0120
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -47197,6 +47435,7 @@ NULLIF(NULLIF(s.B25077001, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25078001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0120 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0120 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0120_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -47443,6 +47682,7 @@ NULLIF(NULLIF(s.B25077001_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25078001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0120_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0120_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0121
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -47623,6 +47863,7 @@ NULLIF(NULLIF(s.B25094017, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25094018, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0121 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0121 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0121_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -47803,6 +48044,7 @@ NULLIF(NULLIF(s.B25094017_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25094018_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0121_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0121_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0122
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -48021,6 +48263,7 @@ NULLIF(NULLIF(s.B25104017, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25105001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0122 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0122 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0122_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -48239,6 +48482,7 @@ NULLIF(NULLIF(s.B25104017_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25105001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0122_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0122_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0123
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -48466,6 +48710,7 @@ NULLIF(NULLIF(s.B25120004, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25120005, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0123 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0123 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0123_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -48693,6 +48938,7 @@ NULLIF(NULLIF(s.B25120004_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25120005_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0123_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0123_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0124
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -48937,6 +49183,7 @@ NULLIF(NULLIF(s.B25123012, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25123013, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0124 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0124 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0124_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -49181,6 +49428,7 @@ NULLIF(NULLIF(s.B25123012_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25123013_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0124_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0124_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0125
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -49373,6 +49621,7 @@ NULLIF(NULLIF(s.B25126068, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25126069, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0125 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0125 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0125_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -49565,6 +49814,7 @@ NULLIF(NULLIF(s.B25126068_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25126069_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0125_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0125_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0126
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -49775,6 +50025,7 @@ NULLIF(NULLIF(s.B25129072, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25129073, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0126 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0126 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0126_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -49985,6 +50236,7 @@ NULLIF(NULLIF(s.B25129072_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B25129073_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0126_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0126_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0127
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -50229,6 +50481,7 @@ NULLIF(NULLIF(s.B26103A007, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26103A008, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0127 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0127 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0127_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -50473,6 +50726,7 @@ NULLIF(NULLIF(s.B26103A007_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26103A008_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0127_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0127_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0128
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -50665,6 +50919,7 @@ NULLIF(NULLIF(s.B26107021, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26107022, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0128 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0128 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0128_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -50857,6 +51112,7 @@ NULLIF(NULLIF(s.B26107021_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26107022_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0128_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0128_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0129
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -51058,6 +51314,7 @@ NULLIF(NULLIF(s.B26109PR056, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26109PR057, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0129 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0129 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0129_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -51259,6 +51516,7 @@ NULLIF(NULLIF(s.B26109PR056_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26109PR057_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0129_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0129_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0130
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -51490,6 +51748,7 @@ NULLIF(NULLIF(s.B26118021, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26118022, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0130 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0130 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0130_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -51721,6 +51980,7 @@ NULLIF(NULLIF(s.B26118021_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26118022_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0130_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0130_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0131
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -51766,6 +52026,7 @@ NULLIF(NULLIF(s.B26120017, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26120018, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0131 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0131 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0131_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -51811,6 +52072,7 @@ NULLIF(NULLIF(s.B26120017_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26120018_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0131_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0131_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0132
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -52061,6 +52323,7 @@ NULLIF(NULLIF(s.B26201244, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26201245, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0132 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0132 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0132_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -52311,6 +52574,7 @@ NULLIF(NULLIF(s.B26201244_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26201245_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0132_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0132_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0133
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -52558,6 +52822,7 @@ NULLIF(NULLIF(s.B26206040, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26206041, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0133 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0133 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0133_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -52805,6 +53070,7 @@ NULLIF(NULLIF(s.B26206040_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26206041_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0133_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0133_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0134
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -53014,6 +53280,7 @@ NULLIF(NULLIF(s.B26209072, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26209073, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0134 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0134 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0134_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -53223,6 +53490,7 @@ NULLIF(NULLIF(s.B26209072_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26209073_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0134_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0134_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0135
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -53429,6 +53697,7 @@ NULLIF(NULLIF(s.B26212045, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26212046, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0135 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0135 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0135_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -53635,6 +53904,7 @@ NULLIF(NULLIF(s.B26212045_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26212046_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0135_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0135_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0136
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -53873,6 +54143,7 @@ NULLIF(NULLIF(s.B26220023, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26220024, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0136 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0136 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0136_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -54111,6 +54382,7 @@ NULLIF(NULLIF(s.B26220023_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B26220024_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0136_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0136_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0137
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -54320,6 +54592,7 @@ NULLIF(NULLIF(s.C27001I009, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27001I010, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0137 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0137 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0137_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -54529,6 +54802,7 @@ NULLIF(NULLIF(s.C27001I009_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27001I010_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0137_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0137_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0138
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -54717,6 +54991,7 @@ NULLIF(NULLIF(s.C27009020, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27009021, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0138 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0138 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0138_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -54905,6 +55180,7 @@ NULLIF(NULLIF(s.C27009020_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27009021_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0138_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0138_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0139
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -55112,6 +55388,7 @@ NULLIF(NULLIF(s.C27016050, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27016051, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0139 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0139 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0139_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -55319,6 +55596,7 @@ NULLIF(NULLIF(s.C27016050_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27016051_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0139_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0139_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0140
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -55531,6 +55809,7 @@ NULLIF(NULLIF(s.C27021014, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27021015, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0140 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0140 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0140_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -55743,6 +56022,7 @@ NULLIF(NULLIF(s.C27021014_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.C27021015_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0140_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0140_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0141
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -55961,6 +56241,7 @@ NULLIF(NULLIF(s.B28012020, ''), '.')::double precision,
 NULLIF(NULLIF(s.B28012021, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0141 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0141 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0141_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56179,6 +56460,7 @@ NULLIF(NULLIF(s.B28012020_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B28012021_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0141_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0141_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0142
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56201,6 +56483,7 @@ NULLIF(NULLIF(s.B29003003, ''), '.')::double precision,
 NULLIF(NULLIF(s.B29004001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0142 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0142 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0142_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56223,6 +56506,7 @@ NULLIF(NULLIF(s.B29003003_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B29004001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0142_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0142_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0143
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56268,6 +56552,7 @@ NULLIF(NULLIF(s.B98031001, ''), '.')::double precision,
 NULLIF(NULLIF(s.B98032001, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0143 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0143 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0143_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56313,6 +56598,7 @@ NULLIF(NULLIF(s.B98031001_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B98032001_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0143_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0143_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0144
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56393,6 +56679,7 @@ NULLIF(NULLIF(s.B99085002, ''), '.')::double precision,
 NULLIF(NULLIF(s.B99085003, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0144 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0144 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0144_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56473,6 +56760,7 @@ NULLIF(NULLIF(s.B99085002_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B99085003_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0144_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0144_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0145
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56494,6 +56782,7 @@ NULLIF(NULLIF(s.B99089002, ''), '.')::double precision,
 NULLIF(NULLIF(s.B99089003, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0145 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0145 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0145_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56515,6 +56804,7 @@ NULLIF(NULLIF(s.B99089002_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B99089003_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0145_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0145_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0146
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -56761,6 +57051,7 @@ NULLIF(NULLIF(s.B992521002, ''), '.')::double precision,
 NULLIF(NULLIF(s.B992521003, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0146 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0146 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0146_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -57007,6 +57298,7 @@ NULLIF(NULLIF(s.B992521002_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B992521003_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0146_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0146_moe CASCADE;
 
 INSERT INTO acs2020_5yr.seq0147
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -57087,6 +57379,7 @@ NULLIF(NULLIF(s.B99283004, ''), '.')::double precision,
 NULLIF(NULLIF(s.B99283005, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0147 s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
+DROP TABLE acs2020_5yr.tmp_seq0147 CASCADE;
 
 INSERT INTO acs2020_5yr.seq0147_moe
 SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int, g.geoid,
@@ -57167,4 +57460,4 @@ NULLIF(NULLIF(s.B99283004_moe, ''), '.')::double precision,
 NULLIF(NULLIF(s.B99283005_moe, ''), '.')::double precision
 FROM acs2020_5yr.tmp_seq0147_moe s
 JOIN acs2020_5yr.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);
-
+DROP TABLE acs2020_5yr.tmp_seq0147_moe CASCADE;
