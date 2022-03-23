@@ -183,6 +183,13 @@ config = {
         'line_number_column_name': 'Line Number',
         'table_id_column_name': 'Table ID'
     },
+
+    # Note that there was no acs2020_1yr because of the pandemic
+    'acs2020_5yr': {
+        'sequence_number_column_name': 'Sequence Number',
+        'line_number_column_name': 'Line Number',
+        'table_id_column_name': 'Table ID'
+    },
 }
 
 if which_acs not in config:
