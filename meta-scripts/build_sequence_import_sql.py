@@ -15,7 +15,7 @@ SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int
     sql_file.write(',\n'.join(cell_columns))
     sql_file.write("""
 FROM %s.tmp_seq%04d s
-JOIN %s.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);\n\n""" % (release, sqn, release,))
+JOIN %s.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);\nDROP TABLE %s.tmp_seq%04d CASCADE;\n\n""" % (release, sqn, release, release, sqn,))
 
     # A tiny hack to append "_moe" to the name of the column
     cell_moe_columns = [t.replace(", ''", "_moe, ''") for t in cell_columns]
@@ -26,7 +26,7 @@ SELECT s.fileid, s.filetype, upper(s.stusab), s.chariter, s.seq, s.logrecno::int
     sql_file.write(',\n'.join(cell_moe_columns))
     sql_file.write("""
 FROM %s.tmp_seq%04d_moe s
-JOIN %s.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);\n\n""" % (release, sqn, release,))
+JOIN %s.geoheader g ON (lower(s.stusab)=lower(g.stusab) AND s.logrecno=g.logrecno);\nDROP TABLE %s.tmp_seq%04d CASCADE;\n\n""" % (release, sqn, release, release, sqn,))
 
 
 def run(data_root, working_dir, release, config):
