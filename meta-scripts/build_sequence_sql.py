@@ -23,7 +23,7 @@ PRIMARY KEY (geoid)
 WITH (autovacuum_enabled = FALSE, toast.autovacuum_enabled = FALSE);\n\n""")
 
     # A tiny hack to append "_moe" to the name of the column
-    cell_moe_columns = [t.replace(' do', '_moe do') for t in cell_columns]
+    cell_moe_columns = [t.replace(' real', '_moe real') for t in cell_columns]
 
     sql_file.write("""CREATE TABLE %s.seq%04d_moe (
 fileid varchar(6),
