@@ -29,9 +29,13 @@ CREATE TABLE aggregation.user_geodata_blocks_2010 (
     geoid varchar(15) NOT NULL REFERENCES blocks.tabblock10(geoid10)
 );
 CREATE  INDEX user_geodata_blocks_2010_geoid_idx ON aggregation.user_geodata_blocks_2010 (geoid);
+ALTER TABLE aggregation.user_geodata_blocks_2010 
+    ADD PRIMARY KEY (user_geodata_geometry_id,geoid);
 
 CREATE TABLE aggregation.user_geodata_blocks_2020 (
     user_geodata_geometry_id INT NOT NULL REFERENCES aggregation.user_geodata_geometry ON DELETE CASCADE,
     geoid varchar(15) NOT NULL REFERENCES blocks.tabblock20(geoid20)
 );
 CREATE  INDEX user_geodata_blocks_2020_geoid_idx ON aggregation.user_geodata_blocks_2020 (geoid);
+ALTER TABLE aggregation.user_geodata_blocks_2020 
+ ADD PRIMARY KEY (user_geodata_geometry_id,geoid);
