@@ -7,7 +7,9 @@ import csv
 import sys, os, os.path
 from pathlib import Path
 
-TYPE_XREF = {
+TYPE_XREF = { 
+    # B08013 has values larger than 'INTEGER' 
+    # so maybe we won't actually use this
     'int': 'INTEGER',
     'float': 'REAL'
 }
@@ -20,8 +22,8 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
             if column['Unique ID']: # skip if blank (for label-only rows)
-                f.write(f",\n\t{column['Unique ID']} {TYPE_XREF[column['Type']]}")
-                f.write(f",\n\t{column['Unique ID']}_moe {TYPE_XREF[column['Type']]}")
+                f.write(f",\n\t{column['Unique ID']} numeric")
+                f.write(f",\n\t{column['Unique ID']}_moe numeric")
         f.write(f"\n);\n")
 
     with views_path.open('a') as f:
