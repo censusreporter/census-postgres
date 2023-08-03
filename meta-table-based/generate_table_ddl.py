@@ -8,32 +8,40 @@ import sys, os, os.path
 from pathlib import Path
 
 TYPE_XREF = { 
-    # B08013 has values larger than 'INTEGER' 
-    # so maybe we won't actually use this
     'int': 'INTEGER',
-    'float': 'REAL'
+    'float': 'NUMERIC',
+    'b08013': 'NUMERIC' # B08013 has values larger than 'INTEGER' 
 }
 
 def write_table_details(schema, table_id, columns, tables_path, views_path):
+    if table_id.startswith('b9'):
+        table_name = f'{schema}.{table_id}'
+    else:
+        table_name = f'{schema}.{table_id}_moe'
+
     with tables_path.open('a') as f:
         f.write(f"\n--- {table_id.upper()} {columns[0]['Title']}")
-        f.write(f"\nDROP TABLE IF EXISTS {schema}.{table_id}_moe;")
-        f.write(f"\nCREATE TABLE {schema}.{table_id}_moe (")
+        f.write(f"\nDROP TABLE IF EXISTS {table_name};")
+        f.write(f"\nCREATE TABLE {table_name} (")
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
+            datatype = TYPE_XREF.get(table_id, TYPE_XREF.get(column['Type'], 'NUMERIC'))
             if column['Unique ID']: # skip if blank (for label-only rows)
-                f.write(f",\n\t{column['Unique ID']} numeric")
-                f.write(f",\n\t{column['Unique ID']}_moe numeric")
+                f.write(f",\n\t{column['Unique ID']} {datatype}")
+                if not table_id.startswith('b9'): # B98/B99 technical tables don't have MOE
+                    f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
         f.write(f"\n);\n")
 
-    with views_path.open('a') as f:
-        f.write(f"\n--- {table_id.upper()} {columns[0]['Title']}")
-        f.write(f"\ndrop view if exists {schema}.{table_id};")
-        f.write(f"\nCREATE VIEW {schema}.{table_id} as SELECT")
-        f.write(f"\n\tgeoid")
-        for column in columns:
-            f.write(f", {column['Unique ID']}")
-        f.write(f"\nFROM {schema}.{table_id}_moe;\n\n")
+    if table_name.endswith('_moe'):
+        view_name = table_name.replace('_moe','')
+        with views_path.open('a') as f:
+            f.write(f"\n--- {table_id.upper()} {columns[0]['Title']}")
+            f.write(f"\ndrop view if exists {view_name};")
+            f.write(f"\nCREATE VIEW {view_name} as SELECT")
+            f.write(f"\n\tgeoid")
+            for column in columns:
+                f.write(f", {column['Unique ID']}")
+            f.write(f"\nFROM {table_name};\n\n")
 
 def run(data_file, schema, output_dir):
     tables_file = output_dir / "create_tables.sql"
