@@ -18,7 +18,7 @@ CREATE TABLE acs2021_1yr_tables.geoheader (
 	aianhhfp varchar(5),
 	aihhtli varchar(1),
 	aits varchar(5),
-	aitsfp varchar(5
+	aitsfp varchar(5),
 	anrc varchar(5),
 	cbsa varchar(5),
 	csa varchar(3),
