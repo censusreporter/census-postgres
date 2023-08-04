@@ -10,7 +10,9 @@ from pathlib import Path
 TYPE_XREF = { 
     'int': 'INTEGER',
     'float': 'NUMERIC',
-    'b08131': 'NUMERIC' # B08131 has values larger than 'INTEGER' 
+    'b08131': 'NUMERIC', # Aggregate travel time for all US is 
+    'b08136': 'NUMERIC', # larger than 'INTEGER' (>3B) so tables with
+    'b08013': 'NUMERIC', # that need a diff datatype
 }
 
 def write_table_details(schema, table_id, columns, tables_path, views_path):
@@ -25,7 +27,7 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
         f.write(f"\nCREATE TABLE {table_name} (")
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
-            datatype = TYPE_XREF.get(table_id, TYPE_XREF.get(column['Type'], 'NUMERIC'))
+            datatype = 'NUMERIC' # TYPE_XREF.get(table_id, TYPE_XREF.get(column['Type'], 'NUMERIC'))
             if column['Unique ID']: # skip if blank (for label-only rows)
                 f.write(f",\n\t{column['Unique ID']} {datatype}")
                 if not table_id.startswith('b9'): # B98/B99 technical tables don't have MOE
