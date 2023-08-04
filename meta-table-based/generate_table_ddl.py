@@ -10,7 +10,7 @@ from pathlib import Path
 TYPE_XREF = { 
     'int': 'INTEGER',
     'float': 'NUMERIC',
-    'b08013': 'NUMERIC' # B08013 has values larger than 'INTEGER' 
+    'b08131': 'NUMERIC' # B08131 has values larger than 'INTEGER' 
 }
 
 def write_table_details(schema, table_id, columns, tables_path, views_path):
