@@ -42,7 +42,8 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
             f.write(f"\nCREATE VIEW {view_name} as SELECT")
             f.write(f"\n\tgeoid")
             for column in columns:
-                f.write(f", {column['Unique ID']}")
+                if column['Unique ID']: # skip if blank (for label-only rows)
+                    f.write(f", {column['Unique ID']}")
             f.write(f"\nFROM {table_name};\n\n")
 
 def run(data_file, schema, output_dir):
