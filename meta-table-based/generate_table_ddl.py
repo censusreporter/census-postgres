@@ -17,7 +17,8 @@ TYPE_XREF = {
 
 def write_table_details(schema, table_id, columns, tables_path, views_path):
     if table_id.startswith('b9'):
-        table_name = f'{schema}.{table_id}'
+        return # time to give up on the technical tables... if we didn't we'd have to deal with the fact that they don't have MOE
+        # table_name = f'{schema}.{table_id}'
     else:
         table_name = f'{schema}.{table_id}_moe'
 
@@ -30,8 +31,7 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
             datatype = 'NUMERIC' # TYPE_XREF.get(table_id, TYPE_XREF.get(column['Type'], 'NUMERIC'))
             if column['Unique ID']: # skip if blank (for label-only rows)
                 f.write(f",\n\t{column['Unique ID']} {datatype}")
-                if not table_id.startswith('b9'): # B98/B99 technical tables don't have MOE
-                    f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
+                f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
         f.write(f"\n);\n")
 
     if table_name.endswith('_moe'):
