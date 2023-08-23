@@ -39,10 +39,27 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
             f.write(f"\nFROM {table_name};\n\n")
 
 def run(data_file, schema, output_dir):
+    drop_schema_file = output_dir / "drop_schema_tables.sql"
+    if drop_schema_file.exists():
+        drop_schema_file.unlink()
+
+    with drop_schema_file.open('w') as f:
+        # can't drop the whole schema, it errors out, so do this first
+        complicated_drop = f"""do $$ declare
+        r record;
+    begin
+        for r in (select tablename from pg_tables where schemaname = '{schema}') loop
+            execute 'drop table if exists ' || quote_ident(r.tablename) || ' cascade';
+        end loop;
+    end $$;
+    """
+        f.write(complicated_drop)
+
+
     tables_file = output_dir / "create_tables.sql"
     if tables_file.exists():
         tables_file.unlink()
-    
+
     views_file = output_dir / "create_views.sql"
     if views_file.exists():
         views_file.unlink()
