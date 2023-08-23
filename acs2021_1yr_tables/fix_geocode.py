@@ -7,12 +7,36 @@
 # This tool takes files and/or directories as arguments. It will walk directories looking for files, and then,
 # for every ".dat" file (assumed to be an ACS data file), it will rewrite it, shortening the geocode, and, incidentally,
 # converting from pipe-delimited to comma-delimited. New files will be written alongside input files, with just the suffix changed.
+#
+# oh, but the geoheader file ends with .txt instead of .dat (because of course)
+# and the geoid is in a different column. 
 import csv
 import sys
 from pathlib import Path
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
+
+
+def rewrite_file(f):
+    output_path = f.parent / f.name.replace(f.suffix,'.csv')
+    fix_pos = None
+    with f.open() as input:
+        reader = csv.reader(input, delimiter='|')
+        with output_path.open('w') as output:
+            writer = csv.writer(output)
+            for i, row in enumerate(reader):
+                if i == 0: # don't change header row but find where geoid is
+                    try:
+                        fix_pos = row.index('GEO_ID')                                
+                    except ValueError as e:
+                        logger.warning(f"{e} with file {f.name} -- SKIPPING")
+                        output_path.unlink()
+                        return
+                else:
+                    row[fix_pos] = row[fix_pos][:3] + row[fix_pos][5:] # chop out chars 4-5
+                writer.writerow(row)
+    logger.debug(f"Wrote {output_path.name}")
 
 files = []
 
@@ -28,20 +52,10 @@ if len(sys.argv) > 1:
             files.append(p)
 
     for f in files:
-        if f.suffix == '.dat':
-            output_path = f.parent / f.name.replace('.dat','.csv')
-            with f.open() as input:
-                reader = csv.reader(input, delimiter='|')
-                with output_path.open('w') as output:
-                    writer = csv.writer(output)
-                    for i, row in enumerate(reader):
-                        if i != 0: # don't change header row
-                            row[0] = row[0][:3] + row[0][5:] # chop out chars 4-5
-                        writer.writerow(row)
-            logger.debug(f"Wrote {output_path.name}")
+        if f.suffix == '.dat' or f.suffix == '.txt':
+            rewrite_file(f)
         else:
             logger.warning(f"Unexpected filename pattern {f.name} -- SKIPPING")
-
 else:
     logger.warning("Provide one or more filenames or directories for rewriting.")
 
