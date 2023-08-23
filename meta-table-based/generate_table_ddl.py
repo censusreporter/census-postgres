@@ -7,14 +7,6 @@ import csv
 import sys, os, os.path
 from pathlib import Path
 
-TYPE_XREF = { 
-    'int': 'INTEGER',
-    'float': 'NUMERIC',
-    'b08131': 'NUMERIC', # Aggregate travel time for all US is 
-    'b08136': 'NUMERIC', # larger than 'INTEGER' (>3B) so tables with
-    'b08013': 'NUMERIC', # that need a diff datatype
-}
-
 def write_table_details(schema, table_id, columns, tables_path, views_path):
     if table_id.startswith('b9'):
         return # time to give up on the technical tables... if we didn't we'd have to deal with the fact that they don't have MOE
@@ -28,7 +20,7 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
         f.write(f"\nCREATE TABLE {table_name} (")
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
-            datatype = 'NUMERIC' # TYPE_XREF.get(table_id, TYPE_XREF.get(column['Type'], 'NUMERIC'))
+            datatype = 'NUMERIC' 
             if column['Unique ID']: # skip if blank (for label-only rows)
                 f.write(f",\n\t{column['Unique ID']} {datatype}")
                 f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
@@ -85,5 +77,5 @@ if __name__ == '__main__':
         output_dir.mkdir(parents=True, exist_ok=True)
         run(data_file, schema, output_dir)
     except ValueError:
-        print(f"usage: ${sys.argv[0]} DATAFILE SCHEMA OUTPUT_DIR")
+        print(f"usage: ${sys.argv[0]} DATAFILE SCHEMA_NAME OUTPUT_DIR")
         print("all arguments are required")
