@@ -11,13 +11,13 @@
 # oh, but the geoheader file ends with .txt instead of .dat (because of course)
 # and the geoid is in a different column.  But you have to specify the file directly; the directory 
 # globbing will only look for .dat files
+
 import csv
 import sys
 from pathlib import Path
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
-
 
 def rewrite_file(f):
     output_path = f.parent / f.name.replace(f.suffix,'.csv')
