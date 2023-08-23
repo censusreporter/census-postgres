@@ -1,0 +1,48 @@
+# ACS table-based shells use "long" geoids, with a seven char prefix to the left of 'US'
+# Census reporter uses five characters here
+# we'd love to synchronize, but two of those seven characters are unknowable when 
+# loading geographies, so it'll be easier to load the data with geoids 
+# as we've been using them
+#
+# This tool takes files and/or directories as arguments. It will walk directories looking for files, and then,
+# for every ".dat" file (assumed to be an ACS data file), it will rewrite it, shortening the geocode, and, incidentally,
+# converting from pipe-delimited to comma-delimited. New files will be written alongside input files, with just the suffix changed.
+import csv
+import sys
+from pathlib import Path
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger()
+
+files = []
+
+logger.info('begin')
+
+if len(sys.argv) > 1:
+
+    for path in sys.argv[1:]:
+        p = Path(path)
+        if p.is_dir():
+            files.extend(p.rglob('*.dat'))
+        else:
+            files.append(p)
+
+    for f in files:
+        if f.suffix == '.dat':
+            output_path = f.parent / f.name.replace('.dat','.csv')
+            with f.open() as input:
+                reader = csv.reader(input, delimiter='|')
+                with output_path.open('w') as output:
+                    writer = csv.writer(output)
+                    for i, row in enumerate(reader):
+                        if i != 0: # don't change header row
+                            row[0] = row[0][:3] + row[0][5:] # chop out chars 4-5
+                        writer.writerow(row)
+            logger.debug(f"Wrote {output_path.name}")
+        else:
+            logger.warning(f"Unexpected filename pattern {f.name} -- SKIPPING")
+
+else:
+    logger.warning("Provide one or more filenames or directories for rewriting.")
+
+logger.info('end')
