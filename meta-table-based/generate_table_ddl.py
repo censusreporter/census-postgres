@@ -7,19 +7,16 @@ import csv
 import sys, os, os.path
 from pathlib import Path
 
-def write_table_details(schema, table_id, columns, tables_path, views_path, drop_path):
+def write_table_details(schema, table_id, columns, tables_path, views_path):
     if table_id.startswith('b9'):
         return # time to give up on the technical tables... if we didn't we'd have to deal with the fact that they don't have MOE
         # table_name = f'{schema}.{table_id}'
     else:
         table_name = f'{schema}.{table_id}_moe'
 
-    with drop_path.open('a') as f:
-        f.write(f"\n--- {table_id.upper()} {columns[0]['Title']}")
-        f.write(f"\nDROP TABLE IF EXISTS {table_name} CASCADE;")
-
     with tables_path.open('a') as f:
         f.write(f"\n--- {table_id.upper()} {columns[0]['Title']}")
+        f.write(f"\nDROP TABLE IF EXISTS {table_name} CASCADE;")
         f.write(f"\nCREATE TABLE {table_name} (")
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
@@ -42,21 +39,28 @@ def write_table_details(schema, table_id, columns, tables_path, views_path, drop
             f.write(f"\nFROM {table_name};\n\n")
 
 def run(data_file, schema, output_dir):
-    # drop_schema_file = output_dir / "drop_schema_tables.sql"
-    # if drop_schema_file.exists():
-    #     drop_schema_file.unlink()
+    drop_schema_file = output_dir / "drop_schema_tables.sql"
+    if drop_schema_file.exists():
+        drop_schema_file.unlink()
 
-    # with drop_schema_file.open('w') as f:
-    #     # can't drop the whole schema, it errors out, so do this first
-    #     complicated_drop = f"""do $$ declare
-    #     r record;
-    # begin
-    #     for r in (select tablename from pg_tables where schemaname = '{schema}') loop
-    #         execute 'drop table if exists ' || quote_ident(r.tablename) || ' cascade';
-    #     end loop;
-    # end $$;
-    # """
-    #     f.write(complicated_drop)
+    with drop_schema_file.open('w') as f:
+        # can't drop the whole schema, it errors out, so do this first
+        complicated_drop = f"""
+    do $$ declare
+        r record;
+        i integer := 0;
+
+    begin
+        for r in (select tablename from pg_tables where schemaname = '{schema}') loop
+            execute 'drop table if exists acs2021_1yr_tables.' || quote_ident(r.tablename) || ' cascade';
+            i = i + 1;
+            IF i % 100 = 0 THEN
+                COMMIT;
+            END IF;
+        end loop;
+    end $$;
+    """
+        f.write(complicated_drop)
 
 
     tables_file = output_dir / "create_tables.sql"
@@ -66,10 +70,6 @@ def run(data_file, schema, output_dir):
     views_file = output_dir / "create_views.sql"
     if views_file.exists():
         views_file.unlink()
-
-    drop_file = output_dir / "drop_tables.sql"
-    if drop_file.exists():
-        drop_file.unlink()
 
 
     with open(data_file, encoding='utf-8-sig') as f:
@@ -84,12 +84,12 @@ def run(data_file, schema, output_dir):
                 columns.append(row)
             else:
                 if columns:
-                    write_table_details(schema, table_id, columns, tables_file, views_file, drop_file)
+                    write_table_details(schema, table_id, columns, tables_file, views_file)
                 columns = [row]
                 table_id = row['Table ID']
 
         # flush the last table:        
-        write_table_details(schema, table_id, columns, tables_file, views_file, drop_file)
+        write_table_details(schema, table_id, columns, tables_file, views_file)
 
 
 if __name__ == '__main__':
