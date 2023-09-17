@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS acs2022_1yr_tables.geoheader;
-CREATE TABLE acs2022_1yr_tables.geoheader (
+DROP TABLE IF EXISTS acs2022_1yr.geoheader;
+CREATE TABLE acs2022_1yr.geoheader (
 	fileid varchar(6),
 	stusab varchar(2),
 	sumlevel int,
