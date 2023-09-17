@@ -1,10 +1,10 @@
-"""Given a table shell datafile, create SQL tables suitable for loading data for each table, 
+"""Given a table shell datafile, create SQL tables suitable for loading data for each table,
 and views that preserve legacy access to the same data without the margin of error."""
 
 # e.g. https://www2.census.gov/programs-surveys/acs/summary_file/2021/table-based-SF/documentation/ACS20211YR_Table_Shells.txt
 
+import argparse
 import csv
-import sys, os, os.path
 from pathlib import Path
 
 def write_table_details(schema, table_id, columns, tables_path, views_path):
@@ -20,7 +20,7 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
         f.write(f"\nCREATE TABLE {table_name} (")
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
-            datatype = 'NUMERIC' 
+            datatype = 'NUMERIC'
             if column['Unique ID']: # skip if blank (for label-only rows)
                 f.write(f",\n\t{column['Unique ID']} {datatype}")
                 f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
@@ -88,19 +88,21 @@ def run(data_file, schema, output_dir):
                 columns = [row]
                 table_id = row['Table ID']
 
-        # flush the last table:        
+        # flush the last table:
         write_table_details(schema, table_id, columns, tables_file, views_file)
 
 
 if __name__ == '__main__':
-    try:
-        _, data_file, schema, output_dir = sys.argv
-        data_file = Path(data_file)
-        assert data_file.exists(), \
-            f"Datafile {data_file} doesn't exist or is not readable"
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        run(data_file, schema, output_dir)
-    except ValueError:
-        print(f"usage: ${sys.argv[0]} DATAFILE SCHEMA_NAME OUTPUT_DIR")
-        print("all arguments are required")
+    # Parse arguments
+    parser = argparse.ArgumentParser(description='Create SQL files for loading ACS data')
+    parser.add_argument('data_file', type=Path, help='path to ACS table shell datafile')
+    parser.add_argument('schema', type=str, help='name of schema to create tables in')
+    parser.add_argument('output_dir', type=Path, help='directory to write SQL files to')
+    args = parser.parse_args()
+
+    assert args.data_file.exists(), \
+        f"Datafile {args.data_file} doesn't exist or is not readable"
+    assert args.output_dir.exists(), \
+        f"Output directory {args.output_dir} doesn't exist or is not readable"
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    run(args.data_file, args.schema, args.output_dir)
