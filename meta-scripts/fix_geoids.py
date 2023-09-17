@@ -1,7 +1,7 @@
 # ACS table-based shells use "long" geoids, with a seven char prefix to the left of 'US'
 # Census reporter uses five characters here
-# we'd love to synchronize, but two of those seven characters are unknowable when 
-# loading geographies, so it'll be easier to load the data with geoids 
+# we'd love to synchronize, but two of those seven characters are unknowable when
+# loading geographies, so it'll be easier to load the data with geoids
 # as we've been using them
 #
 # This tool takes files and/or directories as arguments. It will walk directories looking for files, and then,
@@ -9,7 +9,7 @@
 # converting from pipe-delimited to comma-delimited. New files will be written alongside input files, with just the suffix changed.
 #
 # oh, but the geoheader file ends with .txt instead of .dat (because of course)
-# and the geoid is in a different column.  But you have to specify the file directly; the directory 
+# and the geoid is in a different column.  But you have to specify the file directly; the directory
 # globbing will only look for .dat files
 
 import csv
@@ -29,7 +29,7 @@ def rewrite_file(f):
             for i, row in enumerate(reader):
                 if i == 0: # don't change header row but find where geoid is
                     try:
-                        fix_pos = row.index('GEO_ID')                                
+                        fix_pos = row.index('GEO_ID')
                     except ValueError as e:
                         logger.warning(f"{e} with file {f.name} -- SKIPPING")
                         output_path.unlink()
@@ -43,21 +43,22 @@ files = []
 
 logger.info('begin')
 
-if len(sys.argv) > 1:
-
-    for path in sys.argv[1:]:
-        p = Path(path)
-        if p.is_dir():
-            files.extend(p.rglob('*.dat'))
-        else:
-            files.append(p)
-
-    for f in files:
-        if f.suffix == '.dat' or f.suffix == '.txt':
-            rewrite_file(f)
-        else:
-            logger.warning(f"Unexpected filename pattern {f.name} -- SKIPPING")
-else:
+if len(sys.argv) == 1:
     logger.warning("Provide one or more filenames or directories for rewriting.")
+    sys.exit(1)
+
+for path in sys.argv[1:]:
+    p = Path(path)
+    if p.is_dir():
+        files.extend(p.rglob('*.dat'))
+    else:
+        files.append(p)
+
+for f in files:
+    if f.suffix not in ('.dat', '.txt'):
+        logger.warning(f"Unexpected filename pattern {f.name} -- SKIPPING")
+        continue
+
+    rewrite_file(f)
 
 logger.info('end')
