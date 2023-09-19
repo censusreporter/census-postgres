@@ -14,13 +14,13 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
     else:
         table_name = f'{schema}.{table_id}_moe'
 
+    datatype = 'REAL'
     with tables_path.open('a') as f:
         f.write(f"\n--- {table_id.upper()} {columns[0]['Title']}")
         f.write(f"\nDROP TABLE IF EXISTS {table_name} CASCADE;")
         f.write(f"\nCREATE TABLE {table_name} (")
         f.write(f"\n\tgeoid VARCHAR(40) REFERENCES {schema}.geoheader")
         for column in columns:
-            datatype = 'NUMERIC'
             if column['Unique ID']: # skip if blank (for label-only rows)
                 f.write(f",\n\t{column['Unique ID']} {datatype}")
                 f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
