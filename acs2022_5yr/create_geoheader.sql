@@ -41,7 +41,7 @@ CREATE TABLE acs2022_5yr.geoheader (
 	pci varchar(1),
 	puma5 varchar(5),
 	geoid varchar(40),
-	name varchar(200),
+	name varchar(500),
 	bttr varchar(6),
 	btbg varchar(1),
 	tl_geo_id varchar(15),
