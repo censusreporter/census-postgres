@@ -25,6 +25,7 @@ def write_table_details(schema, table_id, columns, tables_path, views_path):
                 f.write(f",\n\t{column['Unique ID']} {datatype}")
                 f.write(f",\n\t{column['Unique ID']}_moe {datatype}")
         f.write(f"\n);\n")
+        f.write(f"CREATE INDEX {table_id}_moe_geoid_idx ON {table_name} USING btree (geoid);\n")
 
     if table_name.endswith('_moe'):
         view_name = table_name.replace('_moe','')
