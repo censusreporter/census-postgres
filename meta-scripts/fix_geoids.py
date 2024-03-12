@@ -24,7 +24,7 @@ def rewrite_file(f):
     fix_pos = None
     with f.open() as input:
         reader = csv.reader(input, delimiter='|')
-        with output_path.open('w') as output:
+        with output_path.open('w', encoding="utf-8") as output:
             writer = csv.writer(output)
             for i, row in enumerate(reader):
                 if i == 0: # don't change header row but find where geoid is
