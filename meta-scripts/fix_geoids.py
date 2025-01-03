@@ -11,6 +11,9 @@
 # oh, but the geoheader file ends with .txt instead of .dat (because of course)
 # and the geoid is in a different column.  But you have to specify the file directly; the directory
 # globbing will only look for .dat files
+#
+# table-based data files also include special "JAM Values" in some MOE columns, 
+# which should not be loaded. We'll use this to fix that too.
 
 import csv
 import sys
@@ -18,6 +21,14 @@ from pathlib import Path
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
+
+JAM_VALUES = [
+    '-222222222',
+    '-333333333',
+    '-555555555',
+    '-888888888',
+    '-999999999'
+]
 
 def rewrite_file(f):
     output_path = f.parent / f.name.replace(f.suffix,'.csv')
@@ -36,6 +47,9 @@ def rewrite_file(f):
                         return
                 else:
                     row[fix_pos] = row[fix_pos][:3] + row[fix_pos][5:] # chop out chars 4-5
+                    for i in range(len(row)):
+                        if row[i] in JAM_VALUES:
+                            row[i] = ''
                 writer.writerow(row)
     logger.debug(f"Wrote {output_path.name}")
 
