@@ -3,12 +3,19 @@
 # we should try to avoid loading those values (see fix_geoids.py) but if they slip in
 # here's a script that will take them out
 #
+# actually, jam values are something else but leave the name since Joe always thinks
+# of that first when searching. They aren't stop values either.
+# they are sometimes called sentinel values
+# and they are documented at 
+# https://www.census.gov/data/developers/data-sets/acs-1year/notes-on-acs-estimate-and-annotation-values.html
+# without using that word either
+#
 # expects an environment variable, PG_URL to be set to support connecting to the right database
 # and a command line argument specifying which schema to fix
 import psycopg2
 import os
 import sys
-
+from datetime import datetime
 def get_moe_tables(cur, schema_name):
     # Find all tables in the schema that end with _moe
     cur.execute(f"""
@@ -21,40 +28,51 @@ def get_moe_tables(cur, schema_name):
 
 def fix_table(conn, cur, schema_name, table_name):
     # Get all columns of the table that are 'real' values, since the jam values won't occur in character-type columns
+    print(f"{table_name} ", end='')
     cur.execute(f"""
         SELECT column_name
         FROM information_schema.columns
         WHERE table_schema = %s AND table_name = %s
         AND data_type = 'real'
     """, (schema_name, table_name))
-    columns = cur.fetchall()
-    print(f"{table_name} {len(columns)} cols: ",end='')
+    columns = [row[0] for row in cur.fetchall()]
+    print(f"{len(columns)} cols: ", end='')
+    if not columns:
+        print()
+        return
 
-    for column in columns:
-        column_name = column[0]
-        
-        # Update columns with values less than -100000000 to be null
-        cur.execute(f"""
-            UPDATE {schema_name}.{table_name}
-            SET {column_name} = NULL
-            WHERE {column_name} < -100000000
-        """)
-        print('.',end='')
+    # Single UPDATE per table: fix all columns in one pass, only touching rows that need it
+    set_clause = ", ".join(
+        f"{col} = CASE WHEN {col} < -100000000 THEN NULL ELSE {col} END"
+        for col in columns
+    )
+    where_clause = " OR ".join(f"{col} < -100000000" for col in columns)
+    cur.execute(f"UPDATE {schema_name}.{table_name} SET {set_clause} WHERE {where_clause}")
+    print(f"{cur.rowcount} rows fixed")
     conn.commit()
-    print()
 
+# if you use this again, put a note about why skipping, especially for 
+# "problem" cases
+SKIP_THESE = [
+]
 def fix_jam_values(schema_name):
     DSN = os.environ.get('PG_URL')
     if DSN:
         conn = psycopg2.connect(DSN)
         cur = conn.cursor()
-
+        print('get tables')
         tables = get_moe_tables(cur, schema_name)
+        print(f'got {len(tables)} tables')
 
         for row in tables:
-            fix_table(conn, cur, schema_name, row[0])
+            table = row[0]
+            if table not in SKIP_THESE:
+                start = datetime.now()
+                fix_table(conn, cur, schema_name, table)
+                print(f'elapsed: {datetime.now() - start}')
+            else:
+                print(f"{table} - skip")
 
-        conn.commit()        
         cur.close()
         conn.close()
     else:
@@ -67,4 +85,5 @@ if __name__ == '__main__':
         sys.exit(1)
     
     schema_name = sys.argv[1]
+    print('main: ',schema_name)
     fix_jam_values(schema_name)
