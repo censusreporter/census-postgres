@@ -22,14 +22,19 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
-JAM_VALUES = [
-    '-222222222',
-    '-333333333',
-    '-555555555',
-    '-666666666',
-    '-888888888',
-    '-999999999'
-]
+# Known jam values are nine-digit negative numbers (-222222222, -333333333, -555555555,
+# -666666666, -888888888, -999999999) but Census has added to the list over time, and they
+# don't always come formatted the way we expect. Rather than match specific strings, treat
+# any value below this threshold as a jam value; no real ACS estimate comes anywhere near it.
+# This is the same test fix_jam_values.py uses to clean up after a load.
+JAM_VALUE_THRESHOLD = -100000000
+
+
+def is_jam_value(value):
+    try:
+        return float(value) < JAM_VALUE_THRESHOLD
+    except ValueError:  # not a number, e.g. the GEO_ID or NAME columns
+        return False
 
 def rewrite_file(f):
     output_path = f.parent / f.name.replace(f.suffix,'.csv')
@@ -48,9 +53,9 @@ def rewrite_file(f):
                         return
                 else:
                     row[fix_pos] = row[fix_pos][:3] + row[fix_pos][5:] # chop out chars 4-5
-                    for i in range(len(row)):
-                        if row[i] in JAM_VALUES:
-                            row[i] = ''
+                    for j in range(len(row)):
+                        if is_jam_value(row[j]):
+                            row[j] = ''
                 writer.writerow(row)
     logger.debug(f"Wrote {output_path.name}")
 

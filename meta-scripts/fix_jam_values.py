@@ -10,8 +10,12 @@
 # https://www.census.gov/data/developers/data-sets/acs-1year/notes-on-acs-estimate-and-annotation-values.html
 # without using that word either
 #
-# expects an environment variable, PG_URL to be set to support connecting to the right database
-# and a command line argument specifying which schema to fix
+# expects an environment variable, PGURI (or PG_URL) to be set to support connecting to the right
+# database, and a command line argument specifying which schema to fix.
+#
+# The import scripts in census-postgres-scripts/table_based run this after loading a release, as a
+# backstop for anything meta-scripts/fix_geoids.py didn't catch while preprocessing the CSVs. It is
+# safe to re-run: it only updates rows that still hold a jam value.
 import psycopg2
 import os
 import sys
@@ -56,7 +60,7 @@ def fix_table(conn, cur, schema_name, table_name):
 SKIP_THESE = [
 ]
 def fix_jam_values(schema_name):
-    DSN = os.environ.get('PG_URL')
+    DSN = os.environ.get('PGURI') or os.environ.get('PG_URL')
     if DSN:
         conn = psycopg2.connect(DSN)
         cur = conn.cursor()
@@ -76,7 +80,8 @@ def fix_jam_values(schema_name):
         cur.close()
         conn.close()
     else:
-        print('No PG_URL environment variable found. Cannot continue.')
+        print('No PGURI or PG_URL environment variable found. Cannot continue.')
+        sys.exit(1)
 
 if __name__ == '__main__':
     # get the first command line argument and call fix_jam_values using it
